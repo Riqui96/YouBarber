@@ -1,10 +1,12 @@
 package unicauca.movil.tubarberia;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,7 +15,7 @@ import unicauca.movil.tubarberia.databinding.ActivityMainBinding;
 import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.util.Info;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements BarberiaAdapter.OnBarberSelected {
 
     ActivityMainBinding binding;
     BarberiaAdapter adapter;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         Info.data = new ArrayList<>();
-        adapter = new BarberiaAdapter(getLayoutInflater(), Info.data);
+        adapter = new BarberiaAdapter(getLayoutInflater(), Info.data, this);
 
         binding.setAdapter(adapter);
 
@@ -67,4 +69,11 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
+    @Override
+    public void onBarber(int position) {
+
+        Intent intent = new Intent(this, DetailBarberiaActivity.class);
+        intent.putExtra(DetailBarberiaActivity.EXTRA_POS, position);
+        startActivity(intent);
+    }
 }

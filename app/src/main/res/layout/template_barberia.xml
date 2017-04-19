@@ -8,6 +8,10 @@
     <data>
 
         <variable
+            name="handler"
+            type="unicauca.movil.tubarberia.adapters.BarberiaAdapter"/>
+
+        <variable
             name="barber"
             type="unicauca.movil.tubarberia.models.Barberia"/>
 
@@ -16,6 +20,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{(v)-> handler.onClick(v) }"
         >
 
         <android.support.v7.widget.CardView

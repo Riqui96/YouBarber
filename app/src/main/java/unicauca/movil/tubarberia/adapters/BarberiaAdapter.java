@@ -15,12 +15,18 @@ import unicauca.movil.tubarberia.models.Barberia;
 
 public class BarberiaAdapter extends RecyclerView.Adapter<BarberiaAdapter.BarberHolder>{
 
+    public interface OnBarberSelected{
+        void onBarber(int position);
+    }
+
     LayoutInflater inflater;
     List<Barberia> data;
+    OnBarberSelected onBarberSelected;
 
-    public BarberiaAdapter(LayoutInflater inflater, List<Barberia> data) {
+    public BarberiaAdapter(LayoutInflater inflater, List<Barberia> data, OnBarberSelected onBarberSelected) {
         this.inflater = inflater;
         this.data = data;
+        this.onBarberSelected = onBarberSelected;
     }
 
     @Override
@@ -33,11 +39,18 @@ public class BarberiaAdapter extends RecyclerView.Adapter<BarberiaAdapter.Barber
     public void onBindViewHolder(BarberHolder holder, int position) {
         Barberia barberia = data.get(position);
         holder.binding.setBarber(barberia);
+        holder.binding.getRoot().setTag(position);
+        holder.binding.setHandler(this);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void onClick(View view){
+        int pos = (int) view.getTag();
+        onBarberSelected.onBarber(pos);
     }
 
     //region ViewHolder
