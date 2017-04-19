@@ -23,6 +23,7 @@ public class BarberiaAdapter extends RecyclerView.Adapter<BarberiaAdapter.Barber
     List<Barberia> data;
     OnBarberSelected onBarberSelected;
 
+    //region Metodos RecyclerViewAdapter
     public BarberiaAdapter(LayoutInflater inflater, List<Barberia> data, OnBarberSelected onBarberSelected) {
         this.inflater = inflater;
         this.data = data;
@@ -47,6 +48,7 @@ public class BarberiaAdapter extends RecyclerView.Adapter<BarberiaAdapter.Barber
     public int getItemCount() {
         return data.size();
     }
+    //endregion
 
     public void onClick(View view){
         int pos = (int) view.getTag();

@@ -17,22 +17,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
         >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:background="#333"
-            android:layout_marginTop="10dp"
-            app:imgUrl="@{barber.image}" />
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Headline"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{barber.nombre}"
-            tools:text="Nombre Juego" />
+            >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                app:cardElevation="5dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        android:background="#333"
+                        android:layout_marginTop="10dp"
+                        app:imgUrl="@{barber.image}" />
+
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Headline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img"
+                        android:text="@{barber.nombre}"
+                        tools:text="Nombre Barber"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
 
     </LinearLayout>
 </layout>
