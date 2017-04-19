@@ -7,10 +7,11 @@ import android.os.Bundle;
 import unicauca.movil.tubarberia.databinding.ActivityDetailBarberiaBinding;
 import unicauca.movil.tubarberia.util.Info;
 
-public class DetailBarberiaActivity extends AppCompatActivity {
+public class DetailBarberActivity extends AppCompatActivity {
 
     ActivityDetailBarberiaBinding binding;
     public static final String EXTRA_POS ="pos";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -5,8 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -72,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements BarberiaAdapter.O
     @Override
     public void onBarber(int position) {
 
-        Intent intent = new Intent(this, DetailBarberiaActivity.class);
-        intent.putExtra(DetailBarberiaActivity.EXTRA_POS, position);
+        Intent intent = new Intent(this, DetailBarberActivity.class);
+        intent.putExtra(DetailBarberActivity.EXTRA_POS, position);
         startActivity(intent);
     }
 }
