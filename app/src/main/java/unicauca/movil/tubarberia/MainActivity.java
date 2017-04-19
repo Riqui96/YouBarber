@@ -13,7 +13,7 @@ import unicauca.movil.tubarberia.databinding.ActivityMainBinding;
 import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.util.Info;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
     ActivityMainBinding binding;
     BarberiaAdapter adapter;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.setAdapter(adapter);
 
         binding.list.setLayoutManager(new LinearLayoutManager(this));
-        binding.list.setOnClickListener(this);
+
 
         loadBarberias();
 
@@ -66,8 +66,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 }
