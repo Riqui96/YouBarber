@@ -1,5 +1,6 @@
 package unicauca.movil.tubarberia;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,5 +17,9 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.setLogin(this);
 
+    }
+    public void goToNext(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

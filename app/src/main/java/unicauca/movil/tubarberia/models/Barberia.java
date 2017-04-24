@@ -4,7 +4,13 @@ package unicauca.movil.tubarberia.models;
 
 public class Barberia {
 
-    String nombre, direccion, image;
+    private String nombre, direccion, image;
+    private String [] services, precios;
+
+    public Barberia() {
+        this.services = new String[5];
+        this.precios = new String[5];
+    }
 
     public String getNombre() {
         return nombre;
@@ -28,5 +34,26 @@ public class Barberia {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String[] getServices() {
+        return services;
+    }
+
+
+    public void setServices() {
+        this.services[0] = "Servicios";
+        this.services[1] = "Corte De Cabello";
+        this.services[2] = "Arreglo De Barba";
+        this.services[3] = "Afeitada";
+        this.services[4] = "Corte y delineado de bigote";
+    }
+
+    public String[] getPrecios() {
+        return precios;
+    }
+
+    public void setPrecios(String[] precios) {
+        this.precios = precios;
     }
 }

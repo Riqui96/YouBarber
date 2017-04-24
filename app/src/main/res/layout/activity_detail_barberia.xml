@@ -39,11 +39,12 @@
                     <ImageView
                         android:id="@+id/img"
                         android:layout_width="match_parent"
-                        android:layout_height="160dp"
+                        android:layout_height="180dp"
                         android:scaleType="centerCrop"
                         android:background="#333"
-                        android:layout_marginTop="10dp"
-                        app:imgUrl="@{barber.image}" />
+                        android:layout_marginTop="5dp"
+                        app:imgUrl="@{barber.image}"
+                        />
 
                     <TextView
                         style="@style/Base.TextAppearance.AppCompat.Headline"
@@ -51,6 +52,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/img"
                         android:text="@{barber.nombre}"
+                        app:fontTtf='@{"openegrita"}'
                         tools:text="Nombre Barber"
                         />
 
@@ -59,6 +61,122 @@
             </android.support.v7.widget.CardView>
 
         </FrameLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:stretchColumns="*"
+            >
+
+            <TableRow
+                android:background="#80cbc4"
+                >
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:text="@{barber.services[0]}"
+                    tools:text="Servicios"
+                    />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:text="@{barber.precios[0]}"
+                    tools:text="Precio"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.services[1]}"
+                    android:padding="3dp"
+
+                    tools:text="Corte de cabello"
+                    />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.precios[1]}"
+                    android:padding="3dp"
+                    tools:text="$8.000"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.services[2]}"
+                    android:padding="3dp"
+                    tools:text="Arreglo de barba"
+                    />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.precios[2]}"
+                    android:padding="3dp"
+                    tools:text="$8.000"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.services[3]}"
+                    android:padding="3dp"
+                    tools:text="Afeitada"
+                    />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.precios[3]}"
+                    android:padding="3dp"
+                    tools:text="$6.000"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.services[4]}"
+                    android:padding="3dp"
+                    tools:text="Corte y delineado de bigote"
+                    />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="@{barber.precios[4]}"
+                    android:padding="3dp"
+                    tools:text="$6.000"
+                    />
+
+            </TableRow>
+
+            <View
+                android:layout_height="2dp"
+                android:background="#FF909090" />
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_ireserva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Ir a Reservar"
+            />
 
     </LinearLayout>
 </layout>

@@ -21,5 +21,6 @@ public class DetailBarberActivity extends AppCompatActivity {
 
         binding.setBarber(Info.data.get(pos));
 
+
     }
 }

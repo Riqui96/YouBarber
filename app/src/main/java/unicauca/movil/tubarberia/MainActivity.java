@@ -37,25 +37,38 @@ public class MainActivity extends AppCompatActivity implements BarberiaAdapter.O
 
     private void loadBarberias() {
 
+        String [] precios = {"Precio", "$8000","$7000","$6000","$6000"};
         Barberia b1 = new Barberia();
         b1.setNombre("Figaro Barber Shop");
         b1.setDireccion("Cra 10A #1N-17, Cra 8 #7N-02");
         b1.setImage("http://www.figarocolombia.com/wp-content/uploads/2016/05/BANNER1.jpg");
+        b1.setServices();
+        b1.setPrecios(precios);
 
+
+        String [] precios1 = {"Precio", "$8000","$8000","$6000","$5000"};
         Barberia b2 = new Barberia();
         b2.setNombre("The Barber Factory");
         b2.setDireccion("Cra 17 # 8—18");
         b2.setImage("https://www.laguia.digital/wp-content/uploads/2017/02/the-barber-factory_2.jpg");
+        b2.setServices();
+        b2.setPrecios(precios1);
 
+        String [] precios2 = {"Precio", "$7000","$6000","$5000","$5000"};
         Barberia b3 = new Barberia();
         b3.setNombre("Londres");
         b3.setDireccion("Calle 8B #11-15");
         b3.setImage("https://images01.olx-st.com/ui/50/46/44/25/o_1490021740_1ac3daf319f296dd87bae54e45755273.jpg");
+        b3.setServices();
+        b3.setPrecios(precios2);
 
+        String [] precios3 = {"Precio", "$6000","$5000","$5000","$4000"};
         Barberia b4 = new Barberia();
         b4.setNombre("Barberia Timbio ");
         b4.setDireccion("Timbio");
         b4.setImage("https://scontent-mia1-1.xx.fbcdn.net/v/t1.0-9/11036167_1378702989115859_3575677087472355064_n.jpg?oh=d1609eaf946575ca5902c76800fd80eb&oe=597B8A06");
+        b4.setServices();
+        b4.setPrecios(precios3);
 
         Info.data.add(b1);
         Info.data.add(b2);
