@@ -8,6 +8,10 @@
     <data>
 
         <variable
+            name="detail"
+            type="unicauca.movil.tubarberia.DetailBarberActivity"/>
+
+        <variable
             name="barber"
             type="unicauca.movil.tubarberia.models.Barberia"/>
 
@@ -42,7 +46,6 @@
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
                         android:background="#333"
-                        android:layout_marginTop="5dp"
                         app:imgUrl="@{barber.image}"
                         />
 
@@ -79,12 +82,14 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Title"
                     android:text="@{barber.services[0]}"
+                    app:fontTtf='@{"arialne"}'
                     tools:text="Servicios"
                     />
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Title"
                     android:text="@{barber.precios[0]}"
+                    app:fontTtf='@{"arialne"}'
                     tools:text="Precio"
                     />
 
@@ -95,6 +100,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[1]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
 
                     tools:text="Corte de cabello"
@@ -103,6 +109,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[1]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="$8.000"
                     />
@@ -114,6 +121,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[2]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="Arreglo de barba"
                     />
@@ -121,6 +129,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[2]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="$8.000"
                     />
@@ -132,6 +141,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[3]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="Afeitada"
                     />
@@ -139,6 +149,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[3]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="$6.000"
                     />
@@ -150,6 +161,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[4]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="Corte y delineado de bigote"
                     />
@@ -157,6 +169,7 @@
                 <TextView
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[4]}"
+                    app:fontTtf='@{"arial"}'
                     android:padding="3dp"
                     tools:text="$6.000"
                     />
@@ -175,7 +188,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Ir a Reservar"
+            android:text="Ir a reservar"
+            android:onClick="@{()-> detail.goToReserva()}"
             />
 
     </LinearLayout>

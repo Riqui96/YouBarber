@@ -4,7 +4,7 @@ package unicauca.movil.tubarberia.models;
 
 public class Barberia {
 
-    private String nombre, direccion, image;
+    private String nombre, direccion, image, horary, time;
     private String [] services, precios;
 
     public Barberia() {
@@ -34,6 +34,22 @@ public class Barberia {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getHorary() {
+        return horary;
+    }
+
+    public void setHorary(String horary) {
+        this.horary = horary;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String[] getServices() {
