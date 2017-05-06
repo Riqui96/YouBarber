@@ -1,10 +1,19 @@
 package unicauca.movil.tubarberia;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,10 +22,11 @@ import unicauca.movil.tubarberia.databinding.ActivityMainBinding;
 import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.util.Info;
 
-public class MainActivity extends AppCompatActivity implements BarberiaAdapter.OnBarberSelected {
+public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener, AdapterView.OnItemClickListener {
 
     ActivityMainBinding binding;
     BarberiaAdapter adapter;
+    int pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +34,73 @@ public class MainActivity extends AppCompatActivity implements BarberiaAdapter.O
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         Info.data = new ArrayList<>();
-        adapter = new BarberiaAdapter(getLayoutInflater(), Info.data, this);
 
+        adapter = new BarberiaAdapter(getLayoutInflater(), Info.data);
         binding.setAdapter(adapter);
-
-        binding.list.setLayoutManager(new LinearLayoutManager(this));
 
 
         loadBarberias();
 
+        binding.list.setOnItemClickListener(this);
+
+        registerForContextMenu(binding.list);
     }
+
+    //region Create and OptionsItem -> Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.info:
+                Toast.makeText(this, "Presionaste Acerca de", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.close:
+                Toast.makeText(this, "Presionaste Cerrar Sesion", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    //endregion
+
+
+    //region Create and ContextItem -> Menu Contextual
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.itemlist, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        pos = info.position;
+
+        switch (item.getItemId()){
+            case R.id.action_delete:
+                AlertDialog alert = new AlertDialog.Builder(this)
+                        .setTitle("Eliminar")
+                        .setMessage("Desea eliminar el planeta")
+                        .setPositiveButton("Aceptar", this)
+                        .setNegativeButton("Cancelar", this)
+                        .create();
+                alert.show();
+                break;
+        }
+
+        return super.onContextItemSelected(item);
+    }
+    //endregion
 
     private void loadBarberias() {
 
@@ -83,12 +150,23 @@ public class MainActivity extends AppCompatActivity implements BarberiaAdapter.O
 
     }
 
-
     @Override
-    public void onBarber(int position) {
-
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(this, DetailBarberActivity.class);
-        intent.putExtra(DetailBarberActivity.EXTRA_POS, position);
+        intent.putExtra(DetailBarberActivity.EXTRA_POS,i);
         startActivity(intent);
     }
+
+    //region Metodo onClick Menu Contextual
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+        if(i == DialogInterface.BUTTON_POSITIVE){
+            Info.data.remove(pos);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+
+    //endregion
+
 }
