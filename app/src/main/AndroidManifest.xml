@@ -21,14 +21,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".DetailBarberActivity" />
-        <activity android:name=".RegistroActivity"
-            android:theme="@style/NoActionBar"
+        <activity android:name=".DetailBarberActivity"
+            android:label="Descripcion"
             />
-        <activity android:name=".ReservaActivity"
-            android:theme="@style/NoActionBar"
-            />
-        <activity android:name=".ReservaHechaActivity"/>
+        <activity
+            android:name=".RegistroActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".ReservaActivity"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".ReservaHechaActivity" />
+        <activity android:name=".AddActivity"></activity>
     </application>
 
 </manifest>

@@ -17,126 +17,141 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="unicauca.movil.tubarberia.RegistroActivity"
         >
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/img"
             android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/regist"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mask"
+            />
+
+        <TextView
+            android:id="@+id/title_regist"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
+            android:text="YouBarber"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:layout_alignBottom="@+id/img"
+            android:layout_marginLeft="15dp"
+            tools:text="YouBarber"
+            />
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:background="@drawable/regist"
-                />
+    </RelativeLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/mask"
-                />
-
-            <TextView
-                android:id="@+id/title_regist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YouBarber"
-                android:textSize="40dp"
-                android:textColor="#fff"
-                android:layout_alignBottom="@+id/img"
-                android:layout_marginLeft="15dp"
-                tools:text="YouBarber"
-                />
-
-        </RelativeLayout>
-
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="15dp"
             >
 
-            <TextView
-                style="@style/Base.TextAppearance.AppCompat.Body1"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="!Hola! Registrate: "
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                />
-
-            <!-- Username -->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="8dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="unicauca.movil.tubarberia.RegistroActivity"
                 >
 
-                <EditText
-                    android:id="@+id/input_name"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
-                    android:hint="Nombre"
-                    />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    >
 
-            </android.support.design.widget.TextInputLayout>
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="!Hola! Registrate: "
+                        android:layout_marginTop="10dp"
+                        android:textSize="20sp"
+                        />
 
-            <!-- Email -->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                >
+                    <!-- Username -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="8dp"
+                        >
 
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="Email"
-                    />
+                        <EditText
+                            android:id="@+id/input_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:hint="Nombre"
+                            />
 
-            </android.support.design.widget.TextInputLayout>
+                    </android.support.design.widget.TextInputLayout>
 
-            <!-- Password -->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                >
+                    <!-- Email -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        >
 
-                <EditText
-                    android:id="@+id/input_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="Contraseña"
-                    />
+                        <EditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:hint="Email"
+                            />
 
-            </android.support.design.widget.TextInputLayout>
+                    </android.support.design.widget.TextInputLayout>
 
-            <android.support.v7.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:text="Registrarse"
-                android:padding="12dp"
-                tools:text="Create Account"
-                />
+                    <!-- Password -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        >
 
-        </LinearLayout>
+                        <EditText
+                            android:id="@+id/input_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:hint="Contraseña"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Registrarse"
+                        android:padding="12dp"
+                        tools:text="Create Account"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
+
 </layout>
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import unicauca.movil.tubarberia.databinding.ActivityDetailBarberiaBinding;
 import unicauca.movil.tubarberia.databinding.ActivityReservaBinding;
@@ -21,11 +22,21 @@ public class DetailBarberActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_barberia);
         binding.setDetail(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         pos = getIntent().getIntExtra(EXTRA_POS,0); //asumo que llega posicion bajo esa etiqueta
 
         binding.setBarber(Info.data.get(pos));
-
     }
+
+    //region btn_back
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
+    }
+    //endregion
 
     public void goToReserva(){
         Intent intent = new Intent(this, ReservaActivity.class);

@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         switch (item.getItemId()){
 
+            case R.id.list_reser:
+                Intent intent = new Intent(this, ReservaHechaActivity.class);
+                startActivity(intent);
+                break;
+
             case R.id.info:
                 Toast.makeText(this, "Presionaste Acerca de", Toast.LENGTH_SHORT).show();
                 break;
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
             case R.id.action_delete:
                 AlertDialog alert = new AlertDialog.Builder(this)
                         .setTitle("Eliminar")
-                        .setMessage("Desea eliminar el planeta")
+                        .setMessage("Desea eliminar la barberia")
                         .setPositiveButton("Aceptar", this)
                         .setNegativeButton("Cancelar", this)
                         .create();
@@ -155,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         Intent intent = new Intent(this, DetailBarberActivity.class);
         intent.putExtra(DetailBarberActivity.EXTRA_POS,i);
         startActivity(intent);
+
     }
 
     //region Metodo onClick Menu Contextual

@@ -11,7 +11,7 @@
         >
 
         <menu>
-            <item android:id="@+id/info" android:title="Acerca de"/>
+            <item android:id="@+id/list_reser" android:title="Reservas hechas"/>
             <item android:id="@+id/close" android:title="Cerrar Sesion"/>
 
         </menu>
