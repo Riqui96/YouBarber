@@ -40,6 +40,7 @@
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
                         android:background="#333"
+                        android:elevation="10dp"
                         app:imgUrl="@{barber.image}"
                         />
 
@@ -47,6 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
+                        android:elevation="10dp"
                         android:background="@drawable/mask"
                         />
 

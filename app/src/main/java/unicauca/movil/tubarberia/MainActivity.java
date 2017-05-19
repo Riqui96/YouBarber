@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
@@ -31,8 +32,9 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         Info.data = new ArrayList<>();
 
         adapter = new BarberiaAdapter(getLayoutInflater(), Info.data);
@@ -57,11 +59,6 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
-
-            case R.id.list_reser:
-                Intent intent = new Intent(this, ReservaHechaActivity.class);
-                startActivity(intent);
-                break;
 
             case R.id.info:
                 Toast.makeText(this, "Presionaste Acerca de", Toast.LENGTH_SHORT).show();
