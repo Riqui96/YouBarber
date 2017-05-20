@@ -8,6 +8,10 @@
     <data>
 
         <variable
+            name="list"
+            type="unicauca.movil.tubarberia.MainActivity"/>
+
+        <variable
             name="adapter"
             type="unicauca.movil.tubarberia.adapters.BarberiaAdapter"/>
         

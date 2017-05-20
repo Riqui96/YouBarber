@@ -24,7 +24,7 @@ import unicauca.movil.tubarberia.databinding.ActivityMainBinding;
 import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.util.Info;
 
-public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener, AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener, AdapterView.OnItemClickListener, View.OnClickListener {
 
     ActivityMainBinding binding;
     BarberiaAdapter adapter;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         loadBarberias();
 
         binding.list.setOnItemClickListener(this);
+        binding.showMaps.setOnClickListener(this);
 
         registerForContextMenu(binding.list);
     }
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         String [] precios = {"Precio", "$8.000","$7.000","$6.000","$6.000"};
         Barberia b1 = new Barberia();
         b1.setNombre("Figaro Barber Shop");
-        b1.setDireccion("Cra 10A #1N-17, Cra 8 #7N-02");
+        b1.setDireccion("Cra 6 #7N-02");
         b1.setImage("http://www.figarocolombia.com/wp-content/uploads/2016/05/BANNER1.jpg");
         b1.setHorary("Lunes a Sabado: 8:30AM a 8:00PM");
         b1.setServices();
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         String [] precios1 = {"Precio", "$8.000","$8.000","$6.000","$5.000"};
         Barberia b2 = new Barberia();
         b2.setNombre("The Barber Factory");
-        b2.setDireccion("Cra 17 # 8—18");
+        b2.setDireccion("Cra 18 #8-18");
         b2.setImage("https://www.laguia.digital/wp-content/uploads/2017/02/the-barber-factory_2.jpg");
         b2.setHorary("Lunes a Sabado: 9:00AM a 8:00PM");
         b2.setServices();
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         String [] precios2 = {"Precio", "$7.000","$6.000","$5.000","$5.000"};
         Barberia b3 = new Barberia();
         b3.setNombre("Londres");
-        b3.setDireccion("Calle 8B #11-15");
+        b3.setDireccion("Calle 4 #11-15");
         b3.setImage("https://images01.olx-st.com/ui/50/46/44/25/o_1490021740_1ac3daf319f296dd87bae54e45755273.jpg");
         b3.setHorary("Lunes a Sabado: 9:00AM a 7:00PM");
         b3.setServices();
@@ -179,7 +180,16 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         }
     }
 
-
     //endregion
+
+    @Override
+    public void onClick(View view) {
+
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+
+    }
+
+
 
 }
