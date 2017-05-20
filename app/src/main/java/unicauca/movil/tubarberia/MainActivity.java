@@ -2,6 +2,7 @@ package unicauca.movil.tubarberia;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
     ActivityMainBinding binding;
     BarberiaAdapter adapter;
+    SharedPreferences preferences;
     int pos;
 
     @Override
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         adapter = new BarberiaAdapter(getLayoutInflater(), Info.data);
         binding.setAdapter(adapter);
+
+        preferences = getSharedPreferences("preferencias", MODE_PRIVATE);
 
 
         loadBarberias();
@@ -65,7 +69,13 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
                 break;
 
             case R.id.close:
-                Toast.makeText(this, "Presionaste Cerrar Sesion", Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putBoolean("login", false);
+                edit.apply();
+
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
 
