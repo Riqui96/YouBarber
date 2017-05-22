@@ -8,6 +8,10 @@
     <data>
 
         <variable
+            name="reserv"
+            type="unicauca.movil.tubarberia.ReservaActivity"/>
+
+        <variable
             name="reserva"
             type="unicauca.movil.tubarberia.models.Barberia"/>
 

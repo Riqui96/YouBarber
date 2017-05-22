@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         binding.list.setOnItemClickListener(this);
         binding.showMaps.setOnClickListener(this);
+        binding.showReser.setOnClickListener(this);
 
         registerForContextMenu(binding.list);
     }
@@ -185,8 +186,18 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     @Override
     public void onClick(View view) {
 
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
+        switch (view.getId()){
+
+            case R.id.show_maps:
+                Intent intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.show_reser:
+                Intent intent1 = new Intent(this, ReservaHechaActivity.class);
+                startActivity(intent1);
+                break;
+        }
 
     }
 

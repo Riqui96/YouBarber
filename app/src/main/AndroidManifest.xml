@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,8 +36,12 @@
         <activity
             android:name=".ReservaActivity"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".ReservaHechaActivity" />
-        <activity android:name=".MapsActivity"/>
+        <activity android:name=".ReservaHechaActivity"
+            android:label="Tus Reservas"
+            />
+        <activity android:name=".MapsActivity"
+            android:label="Ubicacion Barbers"
+            />
     </application>
 
 </manifest>

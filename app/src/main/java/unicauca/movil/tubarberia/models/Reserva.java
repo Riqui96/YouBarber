@@ -1,12 +1,27 @@
 package unicauca.movil.tubarberia.models;
 
-/**
- * Created by EQUIPO on 22/05/2017.
- */
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity()
 public class Reserva {
+
+    @Id(autoincrement = true)
     Long id;
     String fecha, hora;
+
+    @Generated(hash = 483630063)
+    public Reserva(Long id, String fecha, String hora) {
+        this.id = id;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
+
+    @Generated(hash = 961270578)
+    public Reserva() {
+    }
 
     public Long getId() {
         return id;

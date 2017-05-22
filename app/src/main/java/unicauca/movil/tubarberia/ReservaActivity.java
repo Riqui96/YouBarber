@@ -17,21 +17,26 @@ import java.util.Calendar;
 
 import unicauca.movil.tubarberia.databinding.ActivityReservaBinding;
 import unicauca.movil.tubarberia.models.Reserva;
+import unicauca.movil.tubarberia.models.ReservaDao;
 import unicauca.movil.tubarberia.util.Info;
 
 public class ReservaActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener {
 
     ActivityReservaBinding binding;
+    ReservaDao dao;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     int m=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_reserva);
+        binding.setReserv(this);
 
         Bundle bundle =  getIntent().getExtras();
         m = bundle.getInt("posit");
         binding.setReserva(Info.data.get(m));
+
+        dao=((App)getApplication()).session.getReservaDao();
 
         binding.contentReserva.dateReserv.setOnClickListener(this);
         binding.contentReserva.timeReserv.setOnClickListener(this);
@@ -115,6 +120,8 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
             Reserva reserva = new Reserva();
             reserva.setFecha(Fecha);
             reserva.setHora(Hora);
+
+            dao.insert(reserva);
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

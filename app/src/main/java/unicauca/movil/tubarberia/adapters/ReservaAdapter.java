@@ -50,4 +50,9 @@ public class ReservaAdapter extends BaseAdapter {
 
         return binding.getRoot();
     }
+
+    public void setData(List<Reserva>data){
+        this.data = data;
+        notifyDataSetChanged();
+    }
 }
