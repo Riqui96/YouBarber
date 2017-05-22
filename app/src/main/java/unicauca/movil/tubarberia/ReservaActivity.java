@@ -16,6 +16,7 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 
 import unicauca.movil.tubarberia.databinding.ActivityReservaBinding;
+import unicauca.movil.tubarberia.models.Reserva;
 import unicauca.movil.tubarberia.util.Info;
 
 public class ReservaActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener {
@@ -107,6 +108,14 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
         if(i == DialogInterface.BUTTON_POSITIVE){
+
+            String Fecha = binding.contentReserva.dateReserv.getText().toString();
+            String Hora = binding.contentReserva.timeReserv.getText().toString();
+
+            Reserva reserva = new Reserva();
+            reserva.setFecha(Fecha);
+            reserva.setHora(Hora);
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
