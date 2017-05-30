@@ -104,7 +104,6 @@
                     android:text="@{barber.services[1]}"
                     app:fontTtf='@{"arial"}'
                     android:padding="3dp"
-
                     tools:text="Corte de cabello"
                     />
 
@@ -185,6 +184,7 @@
         </TableLayout>
 
         <Button
+            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/btn_ireserva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

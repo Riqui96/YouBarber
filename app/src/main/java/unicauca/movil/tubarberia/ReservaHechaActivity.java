@@ -12,6 +12,7 @@ import unicauca.movil.tubarberia.adapters.ReservaAdapter;
 import unicauca.movil.tubarberia.databinding.ActivityReservaHechaBinding;
 import unicauca.movil.tubarberia.models.Reserva;
 import unicauca.movil.tubarberia.models.ReservaDao;
+import unicauca.movil.tubarberia.util.Info;
 
 public class ReservaHechaActivity extends AppCompatActivity {
 

@@ -12,18 +12,48 @@
 
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
         >
 
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="#BDBDBD"
+            />
+
+        <ImageView
+            android:id="@+id/icon_cal"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/img"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_horary"
+            />
+
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_toRightOf="@+id/icon_cal"
+            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
             android:text="@{reserva.fecha}"
+            />
+
+        <ImageView
+            android:id="@+id/icon_tim"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/icon_cal"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_time"
             />
 
         <TextView
@@ -31,8 +61,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/icon_cal"
+            android:layout_toRightOf="@+id/icon_tim"
             android:text="@{reserva.hora}"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>

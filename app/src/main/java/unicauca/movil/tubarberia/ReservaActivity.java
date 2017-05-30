@@ -13,9 +13,13 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
+import android.text.format.DateFormat;
+import android.widget.Toast;
+
 import java.util.Calendar;
 
 import unicauca.movil.tubarberia.databinding.ActivityReservaBinding;
+import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.models.Reserva;
 import unicauca.movil.tubarberia.models.ReservaDao;
 import unicauca.movil.tubarberia.util.Info;
@@ -32,6 +36,10 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
         binding = DataBindingUtil.setContentView(this, R.layout.activity_reserva);
         binding.setReserv(this);
 
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         Bundle bundle =  getIntent().getExtras();
         m = bundle.getInt("posit");
         binding.setReserva(Info.data.get(m));
@@ -44,6 +52,8 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+            finish();
         return super.onOptionsItemSelected(item);
     }
 
@@ -87,7 +97,7 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
                     public void onTimeSet(TimePicker timePicker, int hour, int minute) {
                         binding.contentReserva.timeReserv.setText(hour+":"+minute);
                     }
-                },hour,min, false);
+                },hour,min, DateFormat.is24HourFormat(this));
                 timePickerDialog.show();
                 break;
         }
@@ -100,13 +110,22 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
 
     public void Reservar(View view) {
 
-        AlertDialog alert = new AlertDialog.Builder(this)
-                .setTitle("Reserva")
-                .setMessage("Estas seguro de reservar?")
-                .setPositiveButton("Aceptar", this)
-                .setNegativeButton("Cancelar", this)
-                .create();
-        alert.show();
+        String Fecha = binding.contentReserva.dateReserv.getText().toString();
+        String Hora = binding.contentReserva.timeReserv.getText().toString();
+
+        if(Fecha.isEmpty() || Hora.isEmpty()){
+            Toast.makeText(ReservaActivity.this, "Debes llenar todos los datos", Toast.LENGTH_SHORT).show();
+        }
+        else {
+
+            AlertDialog alert = new AlertDialog.Builder(this)
+                    .setTitle("Reserva")
+                    .setMessage("Estas seguro de reservar?")
+                    .setPositiveButton("Aceptar", this)
+                    .setNegativeButton("Cancelar", this)
+                    .create();
+            alert.show();
+        }
 
     }
 
@@ -117,15 +136,15 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
             String Fecha = binding.contentReserva.dateReserv.getText().toString();
             String Hora = binding.contentReserva.timeReserv.getText().toString();
 
-            Reserva reserva = new Reserva();
-            reserva.setFecha(Fecha);
-            reserva.setHora(Hora);
+                Reserva reserva = new Reserva();
+                reserva.setFecha(Fecha);
+                reserva.setHora(Hora);
 
-            dao.insert(reserva);
+                dao.insert(reserva);
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
         }
     }
 

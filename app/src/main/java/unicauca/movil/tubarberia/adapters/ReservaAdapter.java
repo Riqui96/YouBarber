@@ -1,6 +1,7 @@
 package unicauca.movil.tubarberia.adapters;
 
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,13 @@ import java.util.List;
 
 import unicauca.movil.tubarberia.R;
 import unicauca.movil.tubarberia.databinding.TemplateReservaBinding;
+import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.models.Reserva;
-
+import unicauca.movil.tubarberia.util.Info;
 
 
 public class ReservaAdapter extends BaseAdapter {
+
 
     LayoutInflater inflater;
     List<Reserva> data;

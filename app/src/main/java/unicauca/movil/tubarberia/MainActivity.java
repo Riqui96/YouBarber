@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         preferences = getSharedPreferences("preferencias", MODE_PRIVATE);
 
-
         loadBarberias();
 
         binding.list.setOnItemClickListener(this);
@@ -200,7 +199,4 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         }
 
     }
-
-
-
 }
