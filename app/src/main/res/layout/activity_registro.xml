@@ -27,14 +27,14 @@
         <ImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="@dimen/high_forty"
             android:scaleType="centerCrop"
             android:background="@drawable/regist"
             />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="@dimen/high_forty"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/mask"
             />
@@ -43,11 +43,12 @@
             android:id="@+id/title_regist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="YouBarber"
-            android:textSize="40sp"
-            android:textColor="#fff"
+            android:text="@string/title_app"
+            android:textSize="@dimen/medium_fortys"
+            android:textColor="@color/appTitle"
             android:layout_alignBottom="@+id/img"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/small_fifteen"
+            android:layout_marginRight="@dimen/small_fifteen"
             tools:text="YouBarber"
             />
 
@@ -60,7 +61,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
 
@@ -68,24 +69,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="15dp"
+                    android:padding="@dimen/small_fifteen"
                     >
 
                     <TextView
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="!Hola! Registrate: "
-                        android:layout_marginTop="10dp"
-                        android:textSize="20sp"
+                        android:text="@string/txt_regist"
+                        android:layout_marginTop="@dimen/small_ten"
+                        android:textSize="@dimen/small_twentys"
                         />
 
                     <!-- Username -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/small_fifteen"
+                        android:layout_marginBottom="@dimen/small_eight"
                         >
 
                         <EditText
@@ -93,7 +94,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
-                            android:hint="Nombre"
+                            android:hint="@string/name_regist"
                             />
 
                     </android.support.design.widget.TextInputLayout>
@@ -102,8 +103,8 @@
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/small_eight"
+                        android:layout_marginBottom="@dimen/small_eight"
                         >
 
                         <EditText
@@ -111,7 +112,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
-                            android:hint="Email"
+                            android:hint="@string/mail_regist"
                             />
 
                     </android.support.design.widget.TextInputLayout>
@@ -120,8 +121,8 @@
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/small_eight"
+                        android:layout_marginBottom="@dimen/small_eight"
                         >
 
                         <EditText
@@ -129,7 +130,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPassword"
-                            android:hint="Contraseña"
+                            android:hint="@string/password_app"
                             />
 
                     </android.support.design.widget.TextInputLayout>
@@ -138,10 +139,10 @@
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:text="Registrarse"
-                        android:padding="12dp"
+                        android:layout_marginTop="@dimen/small_ten"
+                        android:layout_marginBottom="@dimen/small_twenty"
+                        android:text="@string/btn_regist"
+                        android:padding="@dimen/small_twelve"
                         tools:text="Create Account"
                         />
 

@@ -37,18 +37,18 @@
                     <ImageView
                         android:id="@+id/img"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="@dimen/high_eighty"
                         android:scaleType="centerCrop"
-                        android:background="#333"
-                        android:elevation="10dp"
+                        android:background="@color/appTitle"
+                        android:elevation="@dimen/small_ten"
                         app:imgUrl="@{barber.image}"
                         />
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="@dimen/high_eighty"
                         android:scaleType="centerCrop"
-                        android:elevation="10dp"
+                        android:elevation="@dimen/small_ten"
                         android:background="@drawable/mask"
                         />
 
@@ -57,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/img"
-                        android:textColor="#fff"
+                        android:textColor="@color/appTitle"
                         android:text="@{barber.nombre}"
                         app:fontTtf='@{"openegrita"}'
                         tools:text="Nombre Barber"
@@ -69,16 +69,16 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/small_sixty"
+            android:layout_marginRight="@dimen/small_thirty"
+            android:layout_marginLeft="@dimen/small_thirty"
             android:layout_weight="1"
             android:stretchColumns="*"
             >
 
             <TableRow
-                android:background="#80cbc4"
+                android:background="@color/fontTable"
                 >
 
                 <TextView
@@ -103,7 +103,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[1]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="Corte de cabello"
                     />
 
@@ -111,7 +111,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[1]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="$8.000"
                     />
 
@@ -123,7 +123,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[2]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="Arreglo de barba"
                     />
 
@@ -131,7 +131,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[2]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="$8.000"
                     />
 
@@ -143,14 +143,14 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[3]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="Afeitada"
                     />
 
                 <TextView
                     android:id="@+id/textView8"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     android:text="@{barber.precios[3]}"
                     app:fontTtf='@{"arial"}'
                     tools:text="$6.000" />
@@ -163,7 +163,7 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.services[4]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="Corte y delineado de bigote"
                     />
 
@@ -171,15 +171,15 @@
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:text="@{barber.precios[4]}"
                     app:fontTtf='@{"arial"}'
-                    android:padding="3dp"
+                    android:padding="@dimen/small_three"
                     tools:text="$6.000"
                     />
 
             </TableRow>
 
             <View
-                android:layout_height="2dp"
-                android:background="#FF909090" />
+                android:layout_height="@dimen/small_two"
+                android:background="@color/stripeTable" />
 
         </TableLayout>
 
@@ -188,9 +188,9 @@
             android:id="@+id/btn_ireserva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Ir a reservar"
+            android:layout_marginLeft="@dimen/small_ten"
+            android:layout_marginRight="@dimen/small_ten"
+            android:text="@string/goreser_detail"
             android:onClick="@{()-> detail.goToReserva()}"
             />
 

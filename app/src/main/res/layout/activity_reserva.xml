@@ -40,7 +40,7 @@
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/high_two"
                 app:contentScrim="@color/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
                 app:title="@{reserva.nombre}"
@@ -50,7 +50,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:background="#333"
                     app:imgUrl="@{reserva.image}"
                     app:layout_collapseMode="parallax"
                     />

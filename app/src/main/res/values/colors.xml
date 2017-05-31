@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="loginTitle">#ffffff</color>
+    <color name="appTitle">#ffffff</color>
+    <color name="fontTable">#80cbc4</color>
+    <color name="stripeTable">#FF909090</color>
 </resources>

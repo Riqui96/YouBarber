@@ -16,15 +16,15 @@
         <Button
             style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/btn_reservar"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/small_zero"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="Reservar"
+            android:layout_marginBottom="@dimen/small_eight"
+            android:layout_marginEnd="@dimen/small_twentyfive"
+            android:layout_marginLeft="@dimen/small_eight"
+            android:layout_marginRight="@dimen/small_eight"
+            android:layout_marginStart="@dimen/small_twentyfive"
+            android:layout_marginTop="@dimen/small_twentyfive"
+            android:text="@string/btn_reservar"
             android:onClick="Reservar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -34,14 +34,14 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <android.support.v7.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/small_zero"
             android:layout_height="wrap_content"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/cardView"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/small_eight">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -49,27 +49,27 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Selecciona de uno a dos servicios a reservar"
+                    android:layout_marginLeft="@dimen/small_fifteen"
+                    android:layout_marginRight="@dimen/small_fifteen"
+                    android:layout_marginTop="@dimen/small_eight"
+                    android:text="@string/txtser_reserv"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_sixteens"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_marginStart="@dimen/small_fifteen"
+                    android:layout_marginEnd="@dimen/small_fifteen" />
 
                 <CheckBox
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="23dp"
-                    android:text="Corte de cabello"
+                    android:layout_marginTop="@dimen/small_twenty"
+                    android:text="@string/corte_reserv"
                     app:layout_constraintLeft_toLeftOf="@+id/textView3"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -77,8 +77,8 @@
                     android:id="@+id/checkBox2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Arreglo de barba"
+                    android:layout_marginTop="@dimen/small_fifteen"
+                    android:text="@string/arreglo_reserv"
                     app:layout_constraintLeft_toLeftOf="@+id/checkBox"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
@@ -86,8 +86,8 @@
                     android:id="@+id/checkBox3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Afeitada"
+                    android:layout_marginTop="@dimen/small_fifteen"
+                    android:text="@string/afeitada_reserv"
                     app:layout_constraintLeft_toLeftOf="@+id/checkBox2"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
@@ -95,8 +95,8 @@
                     android:id="@+id/checkBox4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Corte y delineado de bigote"
+                    android:layout_marginTop="@dimen/small_fifteen"
+                    android:text="@string/bigote_reserv"
                     app:layout_constraintLeft_toLeftOf="@+id/checkBox3"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
 
@@ -105,9 +105,9 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/small_zero"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/small_eight"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -120,30 +120,30 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Escribe la fecha a reservar"
+                    android:layout_marginLeft="@dimen/small_fifteen"
+                    android:layout_marginRight="@dimen/small_fifteen"
+                    android:layout_marginTop="@dimen/small_eight"
+                    android:text="@string/writedate_reserv"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_sixteens"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_marginStart="@dimen/small_fifteen"
+                    android:layout_marginEnd="@dimen/small_fifteen" />
 
                 <EditText
                     android:id="@+id/date_reserv"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="@dimen/small_eight"
+                    android:layout_marginLeft="@dimen/small_fifteen"
+                    android:layout_marginRight="@dimen/small_fifteen"
+                    android:layout_marginTop="@dimen/small_twentyfive"
                     android:ems="10"
-                    android:hint="10/04/2017"
+                    android:hint="@string/ejem_date"
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -151,18 +151,18 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4"
                     app:layout_constraintVertical_bias="0.0"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_marginStart="@dimen/small_fifteen"
+                    android:layout_marginEnd="@dimen/small_fifteen" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/small_zero"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/small_zero"
+            android:layout_marginRight="@dimen/small_zero"
+            android:layout_marginTop="@dimen/small_eight"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2"
@@ -174,28 +174,28 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Elige la hora de reserva"
+                    android:layout_marginLeft="@dimen/small_fifteen"
+                    android:layout_marginRight="@dimen/small_fifteen"
+                    android:layout_marginTop="@dimen/small_eight"
+                    android:text="@string/writetime_reserv"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/small_sixteens"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/time_reserv"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="@dimen/small_eight"
+                    android:layout_marginLeft="@dimen/small_fifteen"
+                    android:layout_marginRight="@dimen/small_fifteen"
+                    android:layout_marginTop="@dimen/small_twentyfive"
                     android:ems="10"
-                    android:hint="10:00 AM"
+                    android:hint="@string/ejem_time"
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
