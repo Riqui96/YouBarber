@@ -20,4 +20,11 @@
     <string name="writetime_reserv">Choose the reservation time</string>
     <string name="ejem_time">10:00 AM</string>
     <string name="btn_reservar">Reserve</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_more">More</string>
+    <string name="menu_about">About of</string>
+    <string name="menu_close">Close session</string>
+    <string name="label_reser">Reservation made</string>
+    <string name="label_ubication">Ubication Barbers</string>
 </resources>

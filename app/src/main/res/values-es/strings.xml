@@ -22,5 +22,12 @@
     <string name="writetime_reserv">Elige la hora de reserva</string>
     <string name="ejem_time">10:00 AM</string>
     <string name="btn_reservar">Reservar</string>
+    <string name="menu_edit">Editar</string>
+    <string name="menu_delete">Eliminar</string>
+    <string name="menu_more">Mas</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_close">Cerrar Sesion</string>
+    <string name="label_reser">Reservas Hechas</string>
+    <string name="label_ubication">Ubicacion Barbers</string>
 
 </resources>

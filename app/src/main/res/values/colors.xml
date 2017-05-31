@@ -7,4 +7,8 @@
     <color name="appTitle">#ffffff</color>
     <color name="fontTable">#80cbc4</color>
     <color name="stripeTable">#FF909090</color>
+    <color name="floatPink">#FF80AB</color>
+    <color name="floatBlue">#81D4FA</color>
+    <color name="floatGreen">#689F38</color>
+    <color name="floatGreencla">#AED581</color>
 </resources>

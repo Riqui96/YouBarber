@@ -5,14 +5,14 @@
 
     <item
         android:id="@+id/action_more"
-        android:title="Mas"
+        android:title="@string/menu_more"
         android:icon="@drawable/ic_more"
         app:showAsAction="always"
         >
 
         <menu>
-            <item android:id="@+id/info" android:title="Acerca de"/>
-            <item android:id="@+id/close" android:title="Cerrar Sesion"/>
+            <item android:id="@+id/info" android:title="@string/menu_about"/>
+            <item android:id="@+id/close" android:title="@string/menu_close"/>
         </menu>
 
     </item>
