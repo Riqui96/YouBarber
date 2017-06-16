@@ -9,8 +9,13 @@ import org.greenrobot.greendao.annotation.Generated;
 public class Reserva {
 
     @Id(autoincrement = true)
-    Long id;
-    String fecha, hora;
+    private Long id;
+    private String fecha, hora;
+
+    public Reserva(String fecha, String hora) {
+        this.fecha = fecha;
+        this.hora = hora;
+    }
 
     @Generated(hash = 483630063)
     public Reserva(Long id, String fecha, String hora) {

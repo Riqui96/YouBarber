@@ -3,8 +3,19 @@ package unicauca.movil.tubarberia.models;
 
 public class User {
 
-    Long idusuario;
-    String nombre, mail, password;
+    private Long idusuario;
+    private String nombre, mail, password;
+
+    public User(String nombre, String mail, String password) {
+        this.nombre = nombre;
+        this.mail = mail;
+        this.password = password;
+    }
+
+    public User(String mail, String password) {
+        this.mail = mail;
+        this.password = password;
+    }
 
     public Long getIdusuario() {
         return idusuario;

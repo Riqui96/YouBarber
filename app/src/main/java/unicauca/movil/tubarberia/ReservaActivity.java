@@ -18,15 +18,22 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import unicauca.movil.tubarberia.databinding.ActivityReservaBinding;
 import unicauca.movil.tubarberia.models.Barberia;
 import unicauca.movil.tubarberia.models.Reserva;
 import unicauca.movil.tubarberia.models.ReservaDao;
+import unicauca.movil.tubarberia.models.SimpleResponse;
+import unicauca.movil.tubarberia.net.BarberService;
+import unicauca.movil.tubarberia.util.Data;
 import unicauca.movil.tubarberia.util.Info;
 
-public class ReservaActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener {
+public class ReservaActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener, Callback<SimpleResponse> {
 
     ActivityReservaBinding binding;
+    BarberService service;
     ReservaDao dao;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     int m=0;
@@ -43,6 +50,8 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
         Bundle bundle =  getIntent().getExtras();
         m = bundle.getInt("posit");
         binding.setReserva(Info.data.get(m));
+
+        service = Data.retrofit.create(BarberService.class);
 
         dao=((App)getApplication()).session.getReservaDao();
 
@@ -136,16 +145,38 @@ public class ReservaActivity extends AppCompatActivity implements DialogInterfac
             String Fecha = binding.contentReserva.dateReserv.getText().toString();
             String Hora = binding.contentReserva.timeReserv.getText().toString();
 
-                Reserva reserva = new Reserva();
+            Reserva reserva = new Reserva(Fecha,Hora);
+
+            service.insert(reserva).enqueue(this);
+
+                /*Reserva reserva = new Reserva();
                 reserva.setFecha(Fecha);
                 reserva.setHora(Hora);
 
-                dao.insert(reserva);
+                dao.insert(reserva);*/
 
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
         }
+    }
+
+    @Override
+    public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
+        if(response.isSuccessful()){
+            SimpleResponse res = response.body();
+            if(res.isSucsess()){
+                Toast.makeText(ReservaActivity.this, "Barber reservada !", Toast.LENGTH_SHORT).show();
+                 //finish();
+            }else{
+                Toast.makeText(ReservaActivity.this, "Error al reservar la barber", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    public void onFailure(Call<SimpleResponse> call, Throwable t) {
+
     }
 
     //endregion

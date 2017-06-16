@@ -143,6 +143,7 @@
                         android:layout_marginBottom="@dimen/small_twenty"
                         android:text="@string/btn_regist"
                         android:padding="@dimen/small_twelve"
+                        android:onClick="@{()-> regist.register()}"
                         tools:text="Create Account"
                         />
 

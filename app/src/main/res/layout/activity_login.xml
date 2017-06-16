@@ -110,10 +110,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/username_login"
-                android:inputType="text"
+                android:inputType="text|textEmailAddress"
                 tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="46dp"
-                />
+                tools:layout_editor_absoluteY="46dp" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
