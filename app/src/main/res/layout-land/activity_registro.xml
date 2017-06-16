@@ -134,9 +134,9 @@
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.v7.widget.AppCompatButton
-                            style="@style/Widget.AppCompat.Button.Colored"
+                            style="@style/buttons_style"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/small_fortyfive"
                             android:layout_marginTop="@dimen/small_ten"
                             android:layout_marginBottom="@dimen/small_twenty"
                             android:text="@string/btn_regist"

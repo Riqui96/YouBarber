@@ -18,4 +18,6 @@
     <dimen name="small_two">2dp</dimen>
     <dimen name="high_two">200dp</dimen>
     <dimen name="small_sixteens">16sp</dimen>
+    <dimen name="small_thirtyfive">35dp</dimen>
+    <dimen name="small_fortyfive">45dp</dimen>
 </resources>

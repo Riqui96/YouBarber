@@ -14,10 +14,10 @@
         android:layout_height="match_parent">
 
         <Button
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/buttons_style"
             android:id="@+id/btn_reservar"
             android:layout_width="@dimen/small_zero"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/small_thirtyfive"
             android:layout_marginBottom="@dimen/small_eight"
             android:layout_marginEnd="@dimen/small_twentyfive"
             android:layout_marginLeft="@dimen/small_eight"

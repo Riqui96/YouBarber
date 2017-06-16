@@ -181,10 +181,10 @@
             </TableLayout>
 
             <Button
-                style="@style/Widget.AppCompat.Button.Colored"
+                style="@style/buttons_style"
                 android:id="@+id/btn_ireserva"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/small_thirtyfive"
                 android:layout_marginLeft="@dimen/small_ten"
                 android:layout_marginRight="@dimen/small_ten"
                 android:text="@string/goreser_detail"

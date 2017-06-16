@@ -34,15 +34,18 @@ public class LoginActivity extends AppCompatActivity {
         binding.title.setTypeface(typeface);
         //endregion
 
-        service = Data.retrofit.create(UserService.class);
-
-        /*preferences = getSharedPreferences("preferencias", MODE_PRIVATE);
+        preferences = getSharedPreferences("preferencias", MODE_PRIVATE);
         boolean login = preferences.getBoolean("login",false);
         if(login){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
-        }*/
+            return;
+        }
+
+        service = Data.retrofit.create(UserService.class);
+
+
 
     }
 
@@ -65,6 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     SimpleResponse res = response.body();
                     if(res.isSucsess()){
+
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putBoolean("login", true);
+                        editor.putString("email", mail);
+                        editor.apply();
+
                          Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                          startActivity(intent);
                     }else{
